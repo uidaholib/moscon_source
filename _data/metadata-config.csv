@@ -1,0 +1,10 @@
+field,display-name,dc-map,browse-link
+title,,DC.title
+interviewee,Interviewee,
+interviewer,Interviewer,
+date,Date,DCTERMS.created
+description,Description,DC.description
+location,Location
+transcriber,Transcribed by
+type,Type,DC.type
+format,Format

@@ -1,0 +1,19 @@
+---
+layout: page
+---
+<link rel="stylesheet" type="text/css" href="{{ '/datatables/datatables.min.css' | prepend: site.digital-assets }}">
+
+{{ content }}
+
+<div class="table-responsive-md">
+    <table id="item-table" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Location</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+    </table>
+</div>
