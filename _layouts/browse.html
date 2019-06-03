@@ -40,10 +40,10 @@ layout: page
                 </p>
                 {%- endunless -%}
                 <p class="card-text">
-                    {% for f in fields %}{% if f.display-name-or-btn != 'btn' %}
-                    {% if f.display-name-or-btn %}<strong>{{ f.display-name-or-btn }}:</strong> {% endif %}{{ item[f.field] | truncatewords: 20 | replace: '""','"' }}
+                    {% for f in fields %}{% if f.display-name-or-btn != 'btn' %}{% if item[f.field] %}
+                    {% if f.display-name-or-btn %}<strong>{{ f.display-name-or-btn }}:</strong> {% endif %}{{ item[f.field] | truncatewords: 30 | replace: '""','"' }}
                     {% unless forloop.last %}<br>{% endunless %}  
-                    {% endif %}{% endfor %}
+                    {% endif %}{% endif %}{% endfor %}
                 </p>
                 <p>
                     {%- capture btns -%}{% for f in fields %}{% if f.display-name-or-btn == 'btn' %}{{ item[f.field] | strip }};{% endif %}{% endfor %}{%- endcapture -%}
