@@ -1,7 +1,7 @@
 # Jekyll Digital Collection Generator
 
 # Site settings
-title: Moscon
+title: Moscon Collection
 # choose metadata, be sure to also change page_gen data setting!
 metadata: moscon # check against cdm-collection-id below -- this should be used in config file as well
 
@@ -14,7 +14,7 @@ metadata: moscon # check against cdm-collection-id below -- this should be used 
 objects: https://www.lib.uidaho.edu/digital/objects/moscon
 
 # header and head metadata
-tagline: SciFi FanCon on the Palouse
+tagline: SciFi Fan Convention on the Palouse
 description: "Two decades of Science Fiction fandom on the Palouse." 
 keywords: "Idaho; SciFi; FanCon" # describing the whole collection -- add to the two provided
 author: evanwill # You! Add your github username 
