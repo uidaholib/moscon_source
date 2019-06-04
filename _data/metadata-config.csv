@@ -1,10 +1,23 @@
 field,display-name,dc-map,browse-link
-title,,DC.title
-interviewee,Interviewee,
-interviewer,Interviewer,
-date,Date,DCTERMS.created
+title_full,Title,DC.title
+date,Year,DCTERMS.created
+conference_dates,Conference Dates,
 description,Description,DC.description
-location,Location
-transcriber,Transcribed by
+guest_author,Author Guest of Honor
+guest_artist,Artist Guest of Honor
+guest_scientist,Scientist Guest of Honor
+guest_fan,Fan Guest of Honor
+committee,Conference Committee,
+cover_artist,Cover Artist,
+inside_cover_artist,Inside Cover Artist,
+back_artist,Back Cover Artist,
+badge_artist,Badge Artist,
+button_artist,Button Artist,
+feature_subjects,Program Features,
+creator,Creator,
+subject,Subjects,
+location,Location,
+identifier,Identifier,
+format_original,Original Format,
 type,Type,DC.type
-format,Format
+format,Digital Format,

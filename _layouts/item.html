@@ -1,6 +1,6 @@
 ---
 layout: default
-gallery: true
+# gallery: true
 ---
 {%- assign fields = site.data.metadata-config -%}
 <div class="container py-3">
@@ -14,12 +14,11 @@ gallery: true
         <div class="col-md-6" id="lightgallery" >
             <div class="card mb-2">
                 {% if page.format contains 'image' %}
-                <div class="gallery-img" data-src="{{ site.data.theme.objects }}/{{ item.object-id }}.jpg">
-                    <p><img src="{{ site.data.theme.objects }}/{{ page.object-id }}.jpg" alt="{{ page.title | escape }}" alt="item thumbnail" class="img-fluid"></p>
-                    <p class="text-center"><small>Click to view full screen</small></p>
+                <div class="p-3">
+                    <p><a href="{{ site.data.theme.objects }}/{{ page.object-id }}.jpg" target="_blank"><img src="{{ site.data.theme.objects }}/small/{{ page.object-id }}_sm.jpg" alt="{{ page.title | escape }}" alt="item thumbnail" class="img-fluid"></a></p>
                 </div>
                 {%- elsif page.format contains 'audio' -%}
-                <div class="mt-4">
+                <div class="p-3">
                     <p class="text-center">
                         <audio controls class="mp3-item-player">
                             <source src="{% include download/item.html %}" type="audio/mpeg">
@@ -28,11 +27,11 @@ gallery: true
                     </p>
                 </div>
                 {%- elsif page.youtube-id -%}
-                <div>
+                <div class="p-3">
                     <p><img src="{{ site.data.theme.objects }}/{{ page.object-id }}.jpg" alt="{{ page.title | escape }}" alt="item thumbnail" class="img-fluid"></p>
                 </div>
                 {%- elsif page.format contains 'video' -%}
-                <div class="mt-4">
+                <div class="p-3">
                     <p class="text-center">
                         <video width="320" height="240" controls>
                             <source src="{% include download/video.html %}" type="video/mp4">
@@ -41,9 +40,9 @@ gallery: true
                     </p>
                 </div>
                 {%- else -%}
-                <div class="mt-4">
+                <div class="p-3">
                     <p class="text-center">
-                    <a href="{% include download/item.html %}" target="_blank"><img src="{{ site.data.theme.objects }}/thumbs/{{ item.object-id }}_th.jpg" alt="{{ page.title | escape }}" alt="item thumbnail" class="img-fluid thumb"></a></p> 
+                    <a href="{{ site.data.theme.objects }}/{{ page.object-id }}.pdf" target="_blank"><img src="{{ site.data.theme.objects }}/small/{{ page.object-id }}_sm.jpg" alt="{{ page.title | escape }}" alt="item thumbnail" class="img-fluid thumb"></a></p> 
                 </div>
                 {%- endif -%}
                 <div class="text-center my-2">
@@ -69,7 +68,7 @@ gallery: true
                     </div>
 
                     {%- else -%}
-                    <a href="{% include download/item.html %}" target="_blank" class="btn btn-outline-clearwater" title="Object download">Download {{ page.format | split: '/' | last | upcase }}</a>
+                    <a href="{{ site.data.theme.objects }}/{{ page.object-id }}.pdf" target="_blank" class="btn btn-outline-clearwater" title="Object download">Download {{ page.format | split: '/' | last | upcase }}</a>
                     {%- endif -%}
                 </div>
             </div>
@@ -101,7 +100,7 @@ gallery: true
             <div class="card mb-2">
                 <div class="card-header">Related Items</div>
                 <div class="card-body">
-                    {% assign facets = page.location | replace: '--',';' | split: ";" %}
+                    {% assign facets = page.feature_subjects | split: ";" %}
                     <p>
                     {% for f in facets %}
                         <a class="btn btn-sm btn-secondary m-1 filter" data-filter="{{ f | strip | escape }}" href="{{ f | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ f }}</a> 
@@ -116,7 +115,7 @@ gallery: true
                 <div class="card-body">
                     <dl>
                         <dt>Preferred Citation:</dt> 
-                        <dd>"{{ page.title }}", <em>{{ site.data.theme.title }}</em>, University of Idaho Library.</dd>
+                        <dd>"{% if page.title_full %}{{ page.title_full }}{% else %}{{ page.title }}{% endif %}", <em>{{ site.data.theme.title }}</em>, University of Idaho Library.</dd>
                         <dt>Reference Link:</dt>
                         <dd>{{ page.url | relative_url | prepend: "https://www.lib.uidaho.edu" }}</dd>
                     </dl>
