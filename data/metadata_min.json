@@ -3,6 +3,6 @@
 ---
 {%- assign items = site.data[site.data.theme.metadata] -%}
 { "objects": [
-{%- for item in items -%}[ {{ item.interviewee | jsonify }}, {{ item.date | jsonify }}, {{ item.location | jsonify }}, {{ "/items/" | relative_url | append: item.object-id | append: ".html" | jsonify }} ]{% unless forloop.last %},{% endunless %}
+{%- for item in items -%}[ {{ item.title | jsonify }}, {{ item.date | jsonify }}, {{ item.guests_of_honor | jsonify }}, {{ "/items/" | append: item.object-id | append: ".html" | relative_url | jsonify }} ]{% unless forloop.last %},{% endunless %}
 {% endfor %}
 ] }
