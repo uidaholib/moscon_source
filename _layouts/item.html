@@ -15,7 +15,7 @@ layout: default
             <div class="card mb-2">
                 {% if page.format contains 'image' %}
                 <div class="p-3">
-                    <p><a href="{{ site.data.theme.objects }}/{{ page.object-id }}.jpg" target="_blank"><img src="{{ site.data.theme.objects }}/small/{{ page.object-id }}_sm.jpg" alt="{{ page.title | escape }}" alt="item thumbnail" class="img-fluid"></a></p>
+                    <p><a href="{{ site.data.theme.objects }}/{{ page.filename }}" target="_blank"><img src="{{ site.data.theme.objects }}/small/{{ page.object-id }}_sm.jpg" alt="{{ page.title | escape }}" alt="item thumbnail" class="img-fluid"></a></p>
                 </div>
                 {%- elsif page.format contains 'audio' -%}
                 <div class="p-3">
@@ -42,7 +42,7 @@ layout: default
                 {%- else -%}
                 <div class="p-3">
                     <p class="text-center">
-                    <a href="{{ site.data.theme.objects }}/{{ page.object-id }}.pdf" target="_blank"><img src="{{ site.data.theme.objects }}/small/{{ page.object-id }}_sm.jpg" alt="{{ page.title | escape }}" alt="item thumbnail" class="img-fluid thumb"></a></p> 
+                    <a href="{{ site.data.theme.objects }}/{{ page.filename }}" target="_blank"><img src="{{ site.data.theme.objects }}/small/{{ page.object-id }}_sm.jpg" alt="{{ page.title | escape }}" alt="item thumbnail" class="img-fluid thumb"></a></p> 
                 </div>
                 {%- endif -%}
                 <div class="text-center my-2">
@@ -68,7 +68,7 @@ layout: default
                     </div>
 
                     {%- else -%}
-                    <a href="{{ site.data.theme.objects }}/{{ page.object-id }}.pdf" target="_blank" class="btn btn-outline-clearwater" title="Object download">Download {{ page.format | split: '/' | last | upcase }}</a>
+                    <a href="{{ site.data.theme.objects }}/{{ page.filename }}" target="_blank" class="btn btn-outline-clearwater" title="Object download">Download {{ page.format | split: '/' | last | upcase }}</a>
                     {%- endif -%}
                 </div>
             </div>
