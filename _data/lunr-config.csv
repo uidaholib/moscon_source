@@ -1,0 +1,7 @@
+field,index,display
+title_full,true,true
+description,true,false
+guests_of_honor,true,true
+committee,true,false
+feature_subjects,true,false
+program_artists,true,false

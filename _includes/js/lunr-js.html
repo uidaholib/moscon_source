@@ -1,22 +1,19 @@
+{%- assign fields = site.data.lunr-config -%}
 <script src="{{ '/js/lunr.min.js' | prepend: site.digital-assets }}"></script>
 <script src="{{ '/data/lunr-store.js' | absolute_url }}"></script>
 <script>
 /* initialize lunr */
 var idx = lunr(function () {
   this.ref('id')
-  this.field('name')
-  this.field('date')
-  this.field('description')
-  this.field('location')
-
-  //this.pipeline.remove(lunr.trimmer)
+  {% for f in fields %}{% if f.index == 'true' %}
+  this.field('{{ f.field }}')
+  {% endif %}{% endfor %}
 
   for (var item in store) {
     this.add({
-      name: store[item].name,
-      date: store[item].date,
-      description: store[item].description,
-      location: store[item].location,
+      {% for f in fields %}{% if f.index == 'true' %}
+      {{ f.field }}: store[item].{{ f.field }},
+      {% endif %}{% endfor %}
       id: item
     })
   }
@@ -48,11 +45,14 @@ function lunr_search () {
     var searchitem =
       '<tr>'+
           '<td class="">' +
-            '<p class="h4"><a href="{{ site.baseurl }}/items/' + store[ref].indexId + '.html">' + store[ref].name + '</a></p>' +
+            {% assign display = fields | where: 'display','true' %}
+            {% for d in display %}
+            {% if forloop.first %}
+            '<p class="h4"><a href="{{ site.baseurl }}/items/' + store[ref].id + '.html">' + store[ref].{{ fields[0].field }}  + '</a></p>' +
             '<p class="ml-3">' +
-            store[ref].date + '. ' +
-            store[ref].location + '<br>' +
-            store[ref].description.split(" ").splice(0,30).join(" ") + '...<br>' +
+              {% else %}
+              store[ref].{{ d.field }} + '<br> ' +
+              {% endif %}{% endfor %}
             '</p></td>' +
       '</tr>';
     resultdiv.append(searchitem);
