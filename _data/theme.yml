@@ -21,9 +21,9 @@ author: evanwill # You! Add your github username
 
 # Home page
 # home-banner-image-number: 15 # use number of photo from collection
-home-banner-image-link:  https://www.lib.uidaho.edu/queered/objects/cecilie-johnsen-1154701-unsplash2.jpg # leave blank unless no cdm number to generate item
-home-banner-image-title: Photo by Cecilie Johnsen on Unsplash # for accessibility 
-home-title-y-padding: 3em # the margin from the top your title portion will appear
+home-banner-image-link:  https://www.lib.uidaho.edu/digital/objects/moscon/nasa-89125-unsplash_sm.jpg # leave blank unless no cdm number to generate item
+home-banner-image-title: Photo by NASA on Unsplash # for accessibility 
+home-title-y-padding: 4em # the margin from the top your title portion will appear
 carousel-height: # in px, but don't include the "px"; default is 300.
 featured-subjects: #separate semi-colon(';') - if left blank, will be automatically generated to create top 5 subjects
 featured-subjects-max: 6 # set number of top subjects to display if auto generating
