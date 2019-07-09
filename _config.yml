@@ -20,3 +20,5 @@ page_gen:
     name: 'object-id'
     dir: 'items'
     extension: 'html'   
+
+exclude: ['notes.md', 'Rakefile']
