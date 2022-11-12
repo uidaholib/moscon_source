@@ -9,9 +9,11 @@ url: https://www.lib.uidaho.edu
 # location on the website, normally in /digital
 # e.g. /digital/hjccc
 baseurl: /digital/moscon
-
+# Objects dir location
+objects: https://www.lib.uidaho.edu/digital/objects/moscon
 # url to the shared assets folder on Digital
 digital-assets: https://www.lib.uidaho.edu/assets
+source-code: https://github.com/uidaholib/moscon_source
 
 # page gen settings https://github.com/avillafiorita/jekyll-datapage_gen
 page_gen:
@@ -22,3 +24,23 @@ page_gen:
     extension: 'html'   
 
 exclude: ['notes.md', 'Rakefile']
+
+# Site settings
+title: MosCon Collection
+# header and head metadata
+tagline: The Palouse Empire Science Fiction Association Archive
+description: "A collection of MosCon artifacts celebrating the Palouse Empire Science Fiction Association's decades of fandom on the Palouse." 
+keywords: "Idaho; SciFi; FanCon" # describing the whole collection -- add to the two provided
+author: evanwill # You! Add your github username 
+# Organization branding
+organization-name: "Digital Initiatives, University of Idaho Library"
+organization-link: https://www.lib.uidaho.edu/digital/
+organization-logo-banner: https://www.lib.uidaho.edu/media/digital/justdi_logo_sm.png
+organization-logo-nav: https://www.lib.uidaho.edu/media/digital/bannerlogo_allwhite.png
+
+# choose metadata, be sure to also change page_gen data setting!
+metadata: moscon
+
+# compress CSS output
+sass:
+  style: compressed
